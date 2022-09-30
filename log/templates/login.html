@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+    <div class="container">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h1>Login Form</h1>
+                            <br>
+                            <form action="{% url 'login' %}" method="POST">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    {{field.label_tag}} {{field}} {{field.errors|striptags}} <br>
+                                {% endfor%}
+
+                                <input type="submit" value="login"> <br> <br>
+                                <a href="{% url 'register' %}" ><button>Register</button></a>
+
+                                {% if forms.non_field_errors %}
+                                    {% for error in forms.non_field_errors %}
+                                        {{error}}
+                                    {% endfor %}
+                                {% endif %}
+                            </form>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+{% endblock content %}

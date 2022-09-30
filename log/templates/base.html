@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>assets
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Hexashop Ecommerce HTML CSS Template</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'log/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'log/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'log/css/templatemo-hexashop.css' %}">
+
+    <link rel="stylesheet" href="{% static 'log/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'log/css/lightbox.css' %}">
+
+    <link rel="stylesheet" href="{% static 'log/css/new.css' %}">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="" class="logo">
+                            <img src="{% static 'log/images/logo.png' %}">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            {% comment %} <form action="" method="POST">
+                                {% csrf_token %} 
+                                <input style="width:50px" type="text" name="name">
+                                <input type="submit" name="submit" value="Search">
+                            </form> {% endcomment %}
+                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#men">Men's</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="">Services</a></li>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            
+                            {% comment %} <li class="scroll-to-section"><a href="#explore">Explore</a></li> {% endcomment %}
+                            {% if request.user.is_authenticated %}
+                                <li class="submenu">
+                                    <a href="javascript:;">Add Product</a>
+                                    <ul>
+                                        <li><a href="#">Add Men's Wear</a></li>
+                                        <li><a href="#">Add Women's Wear</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:;"> Welcome {{user.username}}</a>
+                                    <ul>                                                        
+                                        <li><a href="">Your Profile</a></li>
+                                        <li><a href="">Password</a></li>
+                                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                                        {% comment %} <li><a href="{% url 'userdetail' user.id %}">Userdetail</a></li> {% endcomment %}
+                            {% else %}
+                                    <li><a href="{% url 'register' %}">Registration</a></li>                                
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                                    </ul>
+                                </li>                            
+                            </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a> 
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+{% block content %} {% endblock content %}
+
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="{% static 'log/images/white-logo.png' %}" alt="hexashop ecommerce templatemo">
+                        </div>
+                        <ul>
+                            <li><a href="#">Surat, Gujarat-394101, INDIA</a></li>
+                            <li><a href="#">online@company.com</a></li>
+                            <li><a href="#">+91 9898989090</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Services &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Men’s Stitching</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 Stitching Co., Ltd. All Rights Reserved. 
+                        
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">Ravi</a>
+
+                        <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">Stitching</a></p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{% static 'log/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'log/js/popper.js' %}"></script>
+    <script src="{% static 'log/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'log/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'log/js/accordions.js' %}"></script>
+    <script src="{% static 'log/js/datepicker.js' %}"></script>
+    <script src="{% static 'log/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'log/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'log/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'log/js/imgfix.min.js' %}"></script> 
+    <script src="{% static 'log/js/slick.js' %}"></script> 
+    <script src="{% static 'log/js/lightbox.js' %}"></script> 
+    <script src="{% static 'log/js/isotope.js' %}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{% static 'log/js/custom.js' %}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+</html>

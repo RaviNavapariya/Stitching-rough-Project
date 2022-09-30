@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %} 
+    <div class="container">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                          <form action="{% url 'otp' %}" class="form" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                              <div class="input-group">
+                                <input class="form-control" id="uotp" name="uotp" placeholder="Enter OTP" type="text" autofocus required>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                              <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Verify" type="submit">
+                            </div>
+                            <br>
+                            <div class="form-group"><a href="{% url 'register' %}"><button>Click hear to Cancel</button></a></div>
+                            <input type="hidden" class="hide" name="otp" id="otp" value="{{otp}}"> 
+                            </div>
+                          </form>
+                        </div>                
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+{% endblock content %}
